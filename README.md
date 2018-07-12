@@ -27,7 +27,11 @@ Then go back to `ALP` folder and generate the events:
     cd ALP
     ./bin/generate_events
 
-A `lhe.gz` file will be generated under `ALP/Events/run_01` directory.
+When the prompt shows `Do you want to edit a card (press enter to bypass editing)?`, type:
+
+    set WALP auto
+
+to enable automatic calculation of the ALP width for the required couplings. A `lhe.gz` file will be generated under `ALP/Events/run_01` directory.
 
 Unzip the file to get the .lhe file:
 
