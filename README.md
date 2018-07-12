@@ -1,5 +1,6 @@
 # ALP Private MC in MG5
-Similar to [MSSMD recipe](https://github.com/weishi10141993/DarkSUSY_MC_MG5/blob/master/README.md).
+Be sure to cite the [ALP paper](https://arxiv.org/pdf/1708.00443.pdf).
+The recipe below is similar to [MSSMD recipe](https://github.com/weishi10141993/DarkSUSY_MC_MG5/blob/master/README.md).
 
 ## Create a directory and upload the package to the directory
 
