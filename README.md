@@ -15,9 +15,20 @@ Go to the folder `MG5_aMC_v2_6_1/models`. Copy the UFO model there and unzip it 
     wget --no-check-certificate https://github.com/weishi10141993/ALP/raw/master/ALP.tar.gz
     tar xavf ALP.tar.gz
     
-## Set up ggH processes
+## Set up processes
 Copy the proc_card.dat to directory `MG5_aMC_v2_6_1`:
     
-    wget 
+    wget https://raw.githubusercontent.com/weishi10141993/ALP/master/proc_card.dat
     
 Run `./bin/mg5_aMC proc_card.dat` and a folder called `ALP` will be generated. 
+
+Then go back to `ALP` folder and generate the events:
+
+    cd ALP
+    ./bin/generate_events
+
+A `lhe.gz` file will be generated under `ALP/Events/run_01` directory.
+
+Unzip the file to get the .lhe file:
+
+    gunzip -d *.lhe.gz
