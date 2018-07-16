@@ -18,11 +18,12 @@ Go to the folder `MG5_aMC_v2_6_1/models`. Copy the UFO model there and unzip it 
 ## Set up processes
 Copy the proc_card.dat to directory `MG5_aMC_v2_6_1`:
     
+    rm proc_card.dat 
     wget https://raw.githubusercontent.com/weishi10141993/ALP/master/proc_card.dat
     
 Run `./bin/mg5_aMC proc_card.dat` and a folder called `ALP` will be generated. 
 
-Then go back to `ALP` folder and generate the events:
+Then go to `ALP/Cards` folder and modify the ALP mass to '2.500000e-01'(0.25GeV) in the `param_card.dat`. To generate the events:
 
     cd ALP
     ./bin/generate_events
