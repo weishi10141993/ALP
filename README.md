@@ -6,17 +6,19 @@ The recipe below is similar to [MSSMD recipe](https://github.com/weishi10141993/
 
     mkdir ~/MadGraph5
     cd ~/MadGraph5
-    cp /afs/cern.ch/cms/generators/www/MG5_aMC_v2.6.1.tar.gz ./
-    tar -xzf MG5_aMC_v2.6.1.tar.gz
+    #cp /afs/cern.ch/cms/generators/www/MG5_aMC_v2.6.1.tar.gz ./
+    cp /afs/cern.ch/cms/generators/www/MG5_aMC_v2.4.2.tar.gz ./
+    #tar -xzf MG5_aMC_v2.6.1.tar.gz
+    tar -xzf MG5_aMC_v2.4.2.tar.gz
 
 ## Get UFO model 
-Go to the folder `MG5_aMC_v2_6_1/models`. Copy the UFO model there and unzip it to folder `MSSMD_UFO`:
+Go to the folder `MG5_aMC_vXXX/models`. Copy the UFO model there and unzip it to folder `ALP`:
 
     wget --no-check-certificate https://github.com/weishi10141993/ALP/raw/master/ALP.tar.gz
     tar xavf ALP.tar.gz
     
 ## Set up processes
-Copy the proc_card.dat to directory `MG5_aMC_v2_6_1`:
+Copy the proc_card.dat to directory `MG5_aMC_vXXX`:
     
     rm proc_card.dat 
     wget https://raw.githubusercontent.com/weishi10141993/ALP/master/proc_card.dat
