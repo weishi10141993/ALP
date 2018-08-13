@@ -282,7 +282,8 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
       #get needed BSM model
       if [[ $model = *[!\ ]* ]]; then
         echo "Loading extra model $model"
-        wget --no-verbose --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model	
+        #wget --no-verbose --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model
+	wget --no-verbose --no-check-certificate https://github.com/weishi10141993/ALP/raw/master/$model
         cd models
         if [[ $model == *".zip"* ]]; then
           unzip ../$model
