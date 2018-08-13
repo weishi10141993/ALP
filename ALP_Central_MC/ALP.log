@@ -1,0 +1,509 @@
+Starting job on  Mon Aug 13 21:24:32 CEST 2018
+Running on  Linux lxplus050.cern.ch 2.6.32-754.2.1.el6.x86_64 #1 SMP Wed Jul 11 16:54:52 CEST 2018 x86_64 x86_64 x86_64 GNU/Linux
+System release  Scientific Linux CERN SLC release 6.10 (Carbon)
+name: ALP
+carddir: cards/production/2017/13TeV/ALP
+queue: local
+scram_arch: slc6_amd64_gcc481
+cmssw_version: CMSSW_7_1_30
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   gridpack_generation.sh
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ALP.log
+no changes added to commit (use "git add" and/or "git commit -a")
+Current git revision is:
+748fdef9c3530a65099863fbfcc3a047a758641a
+diff --git a/bin/MadGraph5_aMCatNLO/gridpack_generation.sh b/bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+index d02e8de..c6cbd02 100755
+--- a/bin/MadGraph5_aMCatNLO/gridpack_generation.sh
++++ b/bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+@@ -282,7 +282,8 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
+       #get needed BSM model
+       if [[ $model = *[!\ ]* ]]; then
+         echo "Loading extra model $model"
+-        wget --no-verbose --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model	
++        #wget --no-verbose --no-check-certificate https://cms-project-generators.web.cern.ch/cms-project-generators/$model
++	wget --no-verbose --no-check-certificate https://github.com/weishi10141993/ALP/raw/master/$model
+         cd models
+         if [[ $model == *".zip"* ]]; then
+           unzip ../$model
+/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+2018-08-13 21:24:54 URL:https://cms-project-generators.web.cern.ch/cms-project-generators/MG5_aMC_v2.4.2.tar.gz [25094198/25094198] -> "MG5_aMC_v2.4.2.tar.gz" [1]
+patching file models/loop_qcd_qed_sm/restrict_lepton_masses_no_lepton_yukawas.dat
+patching file models/loop_sm/restrict_ckm_no_b_mass.dat
+patching file models/sm/restrict_ckm_lepton_masses.dat
+patching file models/sm/restrict_ckm_lepton_masses_no_b_mass.dat
+patching file models/sm/restrict_ckm_no_b_mass.dat
+patching file models/sm/restrict_lepton_masses_no_b_mass.dat
+patching file Template/NLO/SubProcesses/MCmasses_PYTHIA8.inc
+patching file Template/LO/bin/internal/Gridpack/run.sh
+patching file madgraph/iolibs/export_v4.py
+patching file madgraph/various/cluster.py
+patching file madgraph/interface/amcatnlo_run_interface.py
+patching file Template/NLO/Source/setrun.f
+patching file Template/NLO/SubProcesses/madfks_plot.f
+patching file Template/NLO/SubProcesses/reweight_xsec_events.f
+patching file Template/LO/Source/make_opts
+patching file Template/NLO/SubProcesses/reweight0.inc
+patching file madgraph/various/banner.py
+patching file Template/NLO/FixedOrderAnalysis/HwU.inc
+patching file Template/NLO/SubProcesses/c_weight.inc
+patching file madgraph/interface/reweight_interface.py
+patching file Template/LO/SubProcesses/refine.sh
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file madgraph/various/cluster.py
+patching file madgraph/various/cluster.py
+patching file Template/LO/Source/make_opts
+patching file Template/NLO/Source/make_opts.inc
+patching file madgraph/iolibs/export_v4.py
+patching file madgraph/iolibs/template_files/pdf_opendata.f
+patching file madgraph/iolibs/template_files/pdf_wrap_lhapdf.f
+patching file Template/LO/Source/PDF/pdf_lhapdf6.cc
+patching file Template/NLO/Source/PDF/pdf_lhapdf6.cc
+patching file madgraph/iolibs/template_files/pdf_wrap_lhapdf.f
+patching file Template/LO/Source/make_opts
+patching file Template/NLO/Source/make_opts.inc
+patching file madgraph/various/banner.py
+patching file madgraph/various/cluster.py
+patching file madgraph/various/cluster.py
+Hunk #1 succeeded at 1218 (offset 2 lines).
+Hunk #2 succeeded at 1246 (offset 2 lines).
+Hunk #3 succeeded at 1284 (offset 2 lines).
+patching file Template/LO/SubProcesses/refine.sh
+patching file Template/LO/SubProcesses/refine_splitted.sh
+patching file Template/LO/SubProcesses/survey.sh
+patching file Template/NLO/SubProcesses/ajob_template
+patching file Template/NLO/SubProcesses/reweight_xsec_events.local
+patching file Template/NLO/Source/combine_events.f
+patching file madgraph/iolibs/template_files/madevent_combine_events.f
+[?1034h************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.4.2                 2016-06-10         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+import /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/mgconfigscript
+The import format was not given, so we guess it as command
+set auto_update 0
+save options --auto
+save configuration file to /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/input/mg5_configuration.txt
+set automatic_html_opening False
+This option will be the default in any output that you are going to create in this session.
+In order to keep this changes permanent please run 'save options'
+set lhapdf /cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/share/LHAPDF/../../bin/lhapdf-config
+set lhapdf to /cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/share/LHAPDF/../../bin/lhapdf-config
+save options --auto
+save configuration file to /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/input/mg5_configuration.txt
+set run_mode 2
+This option will be the default in any output that you are going to create in this session.
+In order to keep this changes permanent please run 'save options'
+save options
+save configuration file to /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/input/mg5_configuration.txt
+quit
+ 
+
+ 
+
+2018-08-13 21:25:21 URL:https://cms-project-generators.web.cern.ch/cms-project-generators/SysCalc_V1.1.6.tar.gz [38825/38825] -> "SysCalc_V1.1.6.tar.gz" [1]
+cd src; make
+make[1]: Entering directory `/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/SysCalc/src'
+gfortran -c alfas_functions.f
+g++ -O -DDROP_CGAL -I../include -I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/boost/1.51.0-cms2/include -I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/include -c SysCalc.cc
+g++ -O -DDROP_CGAL -I../include -I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/boost/1.51.0-cms2/include -I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/include -c tinyxml2.cpp
+g++ -O -DDROP_CGAL -I../include -I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/boost/1.51.0-cms2/include -I/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/include -c sys_calc.cc
+g++ -o ../sys_calc SysCalc.o tinyxml2.o alfas_functions.o sys_calc.o -L/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/lib -lLHAPDF -lgfortran
+make[1]: Leaving directory `/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/SysCalc/src'
+Loading extra models specified in /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/ALP/ALP_extramodels.dat
+Loading extra model ALP.tar.gz
+2018-08-13 21:25:28 URL:https://raw.githubusercontent.com/weishi10141993/ALP/master/ALP.tar.gz [61332/61332] -> "ALP.tar.gz" [1]
+ALP/
+ALP/__init__.py
+ALP/ALP_HEFT_new.log
+ALP/coupling_orders.py
+ALP/couplings.py
+ALP/CT_couplings.py
+ALP/dec_model.pkl
+ALP/decays.py
+ALP/function_library.py
+ALP/lorentz.py
+ALP/model.pkl
+ALP/object_library.py
+ALP/parameters.py
+ALP/particles.py
+ALP/propagators.py
+ALP/vertices.py
+ALP/write_param_card.py
+/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work
+[?1034h************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.4.2                 2016-06-10         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from MG5_aMC_v2_4_2/input/mg5_configuration.txt 
+None does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+set lhapdf to /cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/share/LHAPDF/../../bin/lhapdf-config
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+import /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/ALP_proc_card.dat
+The import format was not given, so we guess it as command
+import model ALP
+INFO: load particles 
+INFO: load vertices 
+INFO: Change particles name to pass to MG5 convention 
+Defined multiparticle p = g u c d s u~ c~ d~ s~
+Defined multiparticle j = g u c d s u~ c~ d~ s~
+Defined multiparticle l+ = e+ mu+
+Defined multiparticle l- = e- mu-
+Defined multiparticle vl = ve vm vt
+Defined multiparticle vl~ = ve~ vm~ vt~
+Defined multiparticle all = g a ve vm vt ve~ vm~ vt~ u c t d s b u~ c~ t~ d~ s~ b~ z w+ h alp w- e- mu- ta- e+ mu+ ta+
+define p = g u c d s u~ c~ d~ s~
+Defined multiparticle p = g u c d s u~ c~ d~ s~
+generate p p > h, (h > ALP ALP, ( ALP > mu+ mu- ) )
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=1: WEIGTHED IS 2*NP+HIG+HIW+2*QED+QCD 
+INFO: Trying process: g g > h WEIGHTED<=1 @1  
+INFO: Process has 1 diagrams 
+INFO: Trying process: u u~ > h WEIGHTED<=1 @1  
+INFO: Trying process: u c~ > h WEIGHTED<=1 @1  
+INFO: Trying process: c u~ > h WEIGHTED<=1 @1  
+INFO: Trying process: c c~ > h WEIGHTED<=1 @1  
+INFO: Trying process: d d~ > h WEIGHTED<=1 @1  
+INFO: Trying process: d s~ > h WEIGHTED<=1 @1  
+INFO: Trying process: s d~ > h WEIGHTED<=1 @1  
+INFO: Trying process: s s~ > h WEIGHTED<=1 @1  
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying process: h > alp alp WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying process: alp > mu+ mu- WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+1 processes with 3 diagrams generated in 0.055 s
+Total: 1 processes with 3 diagrams
+output ALP -nojpeg
+INFO: initialize a new directory: ALP 
+INFO: remove old information in ALP 
+INFO: Organizing processes into subprocess groups 
+INFO: Organizing processes into subprocess groups 
+INFO: Organizing processes into subprocess groups 
+INFO: Generating Helas calls for process: g g > h WEIGHTED<=1 @1 
+INFO: Generating Helas calls for process: h > alp alp WEIGHTED<=2 
+INFO: Generating Helas calls for process: alp > mu+ mu- WEIGHTED<=2 
+INFO: Combine h > alp alp WEIGHTED<=2 with decays alp > mu+ mu- WEIGHTED<=2, alp > mu+ mu- WEIGHTED<=2 
+INFO: Combine g g > h WEIGHTED<=1 @1 with decays h > alp alp WEIGHTED<=2
+  Decay: alp > mu+ mu- WEIGHTED<=2
+  Decay: alp > mu+ mu- WEIGHTED<=2 
+INFO: Processing color information for process: g g > h @1
+  Decay: h > alp alp WEIGHTED<=2
+    Decay: alp > mu+ mu- WEIGHTED<=2
+    Decay: alp > mu+ mu- WEIGHTED<=2 
+INFO: Creating files in directory P1_gg_h_h_alpalp_alp_mupmum_alp_mupmum 
+INFO: Generating Feynman diagrams for Process: g g > h WEIGHTED<=1 @1
+  Decay: h > alp alp WEIGHTED<=2
+    Decay: alp > mu+ mu- WEIGHTED<=2
+    Decay: alp > mu+ mu- WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group gg_h_h_alpalp_alp_mupmum_alp_mupmum 
+History written to /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/ALP/Cards/proc_card_mg5.dat
+Generated helas calls for 1 subprocesses (1 diagrams) in 0.023 s
+Wrote files for 10 helas calls in 0.155 s
+Export UFO model to MG4 format
+ALOHA: aloha creates FFS1 routines
+ALOHA: aloha creates SSS2 routines
+ALOHA: aloha creates VVS4 routines
+save configuration file to /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/ALP/Cards/me5_configuration.txt
+INFO: Use Fortran compiler gfortran 
+INFO: Use c++ compiler g++ 
+INFO: Generate web pages 
+Output to directory /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/ALP done.
+Type "launch" to generate events from this process, or see
+/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/ALP/README
+Run "open index.html" to see more information about this process.
+display multiparticles
+Multiparticle labels:
+all = g a ve vm vt ve~ vm~ vt~ u c t d s b u~ c~ t~ d~ s~ b~ z w+ h alp w- e- mu- ta- e+ mu+ ta+
+l- = e- mu-
+j = g u c d s u~ c~ d~ s~
+vl = ve vm vt
+l+ = e+ mu+
+p = g u c d s u~ c~ d~ s~
+vl~ = ve~ vm~ vt~
+quit
+ 
+
+ 
+
+copying generated process to working directory
+INFO: Using default PDF sets for 2017 production
+starting LO mode
+[?1034h************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 5.2.4.2               20xx-xx-xx         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Cards/me5_configuration.txt  
+INFO: load configuration from /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/MG5_aMC_v2_4_2/input/mg5_configuration.txt  
+INFO: load configuration from /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Cards/me5_configuration.txt  
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+generate_events pilotrun
+The following switches determine which programs are run:
+ 1 Run the pythia shower/hadronization:                              pythia=NOT INSTALLED
+ 2 Run PGS as detector simulator:                                       pgs=NOT INSTALLED
+ 3 Run Delphes as detector simulator:                               delphes=NOT INSTALLED
+ 4 Decay particles with the MadSpin module:                         madspin=OFF
+ 5 Add weights to the events based on changing model parameters:   reweight=OFF
+  Either type the switch number (1 to 5) to change its default setting,
+  or set any switch explicitly (e.g. type 'madspin=ON' at the prompt)
+  Type '0', 'auto', 'done' or just press enter when you are done.
+ [[4m0[0m, 4, 5, auto, done, madspin=ON, madspin=OFF, madspin, reweight=ON, ... ][60s to answer] 
+>Do you want to edit a card (press enter to bypass editing)?
+  1 / param      : param_card.dat
+  2 / run        : run_card.dat
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path][60s to answer] 
+>INFO: modify parameter gridpack of the run_card.dat to True 
+Do you want to edit a card (press enter to bypass editing)?
+  1 / param      : param_card.dat
+  2 / run        : run_card.dat
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;60mINFO: modify param_card information BLOCK mass with id (9000005,) set to 1.0 [0m
+Do you want to edit a card (press enter to bypass editing)?
+  1 / param      : param_card.dat
+  2 / run        : run_card.dat
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>[1;60mINFO: modify param_card information BLOCK decay with id (9000005,) set to Auto [0m
+Do you want to edit a card (press enter to bypass editing)?
+  1 / param      : param_card.dat
+  2 / run        : run_card.dat
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [[4m0[0m, done, 1, param, 2, run, enter path] 
+>Generating gridpack with run name pilotrun
+survey  pilotrun --accuracy=0.01 --points=2000 --iterations=8 --gridpack=.true.
+INFO: compile directory 
+INFO: Using LHAPDF v6.2.1 interface for PDFs 
+INFO: Computing the width set on auto in the param_card.dat 
+INFO: load particles 
+INFO: load vertices 
+INFO: Change particles name to pass to MG5 convention 
+************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.4.2                 2016-06-10         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../MG5_aMC_v2_4_2/input/mg5_configuration.txt 
+None does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+set lhapdf to /cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/lhapdf/6.2.1/share/LHAPDF/../../bin/lhapdf-config
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+set automatic_html_opening False --no_save
+compute_widths 9000005 --precision_channel=0.01 --body_decay=4.0025 --path=/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Cards/param_card.dat --output=/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Cards/param_card.dat
+[1;34mPlease note that the automatic computation of the width is
+    only valid in narrow-width approximation and at tree-level.[0m
+INFO: Get two body decay from FeynRules formula 
+Results written to /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Cards/param_card.dat
+INFO: get decay diagram for alp 
+Vertexlist of this model has not been searched.Automatically run the model.find_vertexlist()
+Found 3 stable particles
+No decay is found
+No need for N body-decay (N>2). Results are in /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Cards/param_card.dat
+compile Source Directory
+[1;31mError detected in "generate_events pilotrun"
+write debug file /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/pilotrun_tag_1_debug.log 
+If you need help with this issue please contact us on https://answers.launchpad.net/mg5amcnlo
+MadGraph5Error : A compilation Error occurs when trying to compile /afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/Source.
+	The compilation fails with the following output message:
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o StringCast.o StringCast.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o ranmar.o ranmar.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o alfas_functions_lhapdf.o alfas_functions_lhapdf.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o transpole.o transpole.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o invarients.o invarients.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o hfill.o hfill.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o pawgraphs.o pawgraphs.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o ran1.o ran1.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o rw_events.o rw_events.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o rw_routines.o rw_routines.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o kin_functions.o kin_functions.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o open_file.o open_file.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o basecode.o basecode.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o setrun.o setrun.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o run_printout.o run_printout.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o dgauss.o dgauss.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o readgrid.o readgrid.f
+	    gfortran -O -w -fbounds-check -fPIC -ffixed-line-length-300  -c -o getissud.o getissud.f
+	    run_card.inc:109.17:
+	        Included at setrun.f:78:
+	    
+	          BIAS_MODULE = 'None'                                                     
+	                     1
+	    Error: Symbol 'bias_module' at (1) has no IMPLICIT type
+	    run_card.inc:235.21:
+	        Included at setrun.f:78:
+	    
+	          BIAS_PARAMETERS = '{}'                                                   
+	                         1
+	    Error: Symbol 'bias_parameters' at (1) has no IMPLICIT type
+	    run_card.inc:237.16:
+	        Included at setrun.f:78:
+	    
+	          EVENT_NORM = 'average'                                                   
+	                    1
+	    Error: Symbol 'event_norm' at (1) has no IMPLICIT type
+	    run_card.inc:281.26:
+	        Included at setrun.f:78:
+	    
+	          PDGS_FOR_MERGING_CUT = '1, 2, 3, 4, 5, 6, 21'                            
+	                              1
+	    Error: Symbol 'pdgs_for_merging_cut' at (1) has no IMPLICIT type
+	    run_card.inc:129.12:
+	        Included at setrun.f:78:
+	    
+	          PTLUND = '-1.0'                                                          
+	                1
+	    Error: Symbol 'ptlund' at (1) has no IMPLICIT type
+	    make: *** [setrun.o] Error 1
+	    make: *** Waiting for unfinished jobs....
+	    
+	Please try to fix this compilations issue and retry.
+	Help might be found at https://answers.launchpad.net/mg5amcnlo.
+	If you think that this is a bug, you can report this at https://bugs.launchpad.net/mg5amcnlo[0m
+quit
+INFO:  
+ 
+INFO:  
+ 
+launch in debug mode
+finished pilot run
+cleaning temporary output
+mv: cannot stat `/afs/cern.ch/work/w/wshi/public/testALP/genproductions/bin/MadGraph5_aMCatNLO/ALP/ALP_gridpack/work/processtmp/pilotrun_gridpack.tar.gz': No such file or directory
