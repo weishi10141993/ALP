@@ -39,3 +39,8 @@ to enable automatic calculation of the ALP width for the required couplings. A `
 Unzip the file to get the .lhe file:
 
     gunzip -d *.lhe.gz
+    
+To validate the LHE file, use:
+    wget https://raw.githubusercontent.com/weishi10141993/ALP/master/LHE_read.py
+    wget https://raw.githubusercontent.com/weishi10141993/DarkSUSY_MC_MG5/master/MSSMDarkSector/tdrStyle.py
+    python LHE_read.py
